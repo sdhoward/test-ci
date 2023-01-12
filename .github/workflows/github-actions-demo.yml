@@ -1,0 +1,12 @@
+name: Github Actions test
+run-name: ${{ github.actor }} is running a test
+on:
+  - push
+jobs:
+  Test-Github-Actions:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:unstable
+    steps:
+      - name: test echo
+        run: echo "hello!"
